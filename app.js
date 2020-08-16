@@ -1,7 +1,9 @@
       //Fetching data from JSON file
-      fetch("dino.json")
-        .then(response => response.json())
-        .then(dino => console.log(dino));
+      (function(){
+        fetch("dino.json")
+          .then(response => response.json())
+          .then(dino => console.log(dino));
+      })();
 
 
       // Create Dino Constructor
