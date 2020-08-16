@@ -1,8 +1,6 @@
       //Fetching data from JSON file
       fetch("dino.json")
-      .then(response => response.json())
-      .then(dinos => new Array())
-      .then(dinos => console.log(dinos));
+      .then(response => response.json());
 
       // Create Dino Constructor
       function Dino(species, weight, height, diet, where, when, fact) {
@@ -19,11 +17,22 @@
 
 
       // Create Human Object
-
-
+      let human = {};
 
       // Use IIFE to get human data from form
+      document.querySelector("#btn").addEventListener('click', e => {
+        human = (function() {
+            return {
+                name: document.getElementById('name').value,
+                heightFeet: parseInt(document.getElementById('feet').value),
+                heightInches: parseInt(document.getElementById('inches').value),
+                weight: parseInt(document.getElementById('weight').value),
+                diet: document.getElementById('diet').value
+            }
+        })();
 
+        //console.log(human);
+      });
 
       // Create Dino Compare Method 1
       // NOTE: Weight in JSON file is in lbs, height in inches.
