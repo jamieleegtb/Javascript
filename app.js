@@ -1,6 +1,8 @@
       //Fetching data from JSON file
       fetch("dino.json")
-      .then(response => response.json());
+      .then(response => response.json())
+      .then(json => console.log(json.species));
+
 
       // Create Dino Constructor
       function Dino(species, weight, height, diet, where, when, fact) {
@@ -14,6 +16,7 @@
       }
 
       // Create Dino Objects
+      const
 
 
       // Create Human Object
@@ -30,7 +33,6 @@
                 diet: document.getElementById('diet').value
             }
         })();
-
         //console.log(human);
       });
 
