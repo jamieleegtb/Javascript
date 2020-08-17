@@ -1,3 +1,4 @@
+      document.body.onload = generateDinos;
 
       // Create Dino Constructor
       function Dino(species, weight, height, diet, where, when, fact, image) {
@@ -13,7 +14,7 @@
 
       // Create Dino Objects
       // After post the project I'll focus on fetching the JSON data
-      const triceratops = new Dino(
+      /*const triceratops = new Dino(
         "Triceratops",
         13000,
         114,
@@ -99,8 +100,18 @@
         "Holocene",
         "All birds are living dinosaurs.",
         "images/pigeon.png"
-      );
+      );*/
 
+      // Fetch Dino from dino.json file
+      let dinos = [];
+
+       async function generateDinos(){
+         const myJson = await fetch("dino.json");
+         const data = await myJson.json();
+
+         // Generate Dino objects array
+         dinos = data.Dinos.map(dino => new Dino(dino));
+       }
 
       // Create Human Object
       let human = {};
@@ -120,6 +131,8 @@
 
         // On click remove form from screen
         removeForm();
+        // On button click, prepare and display infographic
+        generateTiles();
       });
 
       // Create Dino Compare Method 1 - Weight
@@ -155,6 +168,17 @@
       }
 
       // Generate Tiles for each Dino in Array
+      function generateTiles (){
+        const grid = document.querySelector("#grid");
+        grid.innerHTML += `
+              <div class="grid-item">
+                  <h3>${dinos.species}</h3>
+                  <img src="${dinos.image}" alt="${dinos.species}" />
+                  <p>${dinos.facts}</p>
+
+                </div>
+            `;
+        };
 
         // Add tiles to DOM
 
@@ -163,6 +187,3 @@
         const form = document.getElementById('dino-compare');
         form.innerHTML = '';
       }
-
-
-// On button click, prepare and display infographic
