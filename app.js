@@ -101,7 +101,7 @@
             <img src="./images/human.png">
           </div>
         `;
-        dinoFourth.before(humanTile);
+        dinoFourth.insertBefore(dinoFourt, humanTile);
       };
 
 
