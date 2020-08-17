@@ -1,7 +1,5 @@
 # Object Oriented Javascript
 
-## Student Instructions
+## Instructions
 
-### Big Picture
-
-### Getting Started
+## Getting Started
