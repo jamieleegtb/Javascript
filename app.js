@@ -87,8 +87,8 @@
           grid.innerHTML += `
             <div class="grid-item">
               <h3>${dino.species}</h3>
-              <img src="${dino.species}.png" alt="${dino.species}" />
-              <p>${dino.facts}</p>
+              <img src="/image/${dino.species.toLowerCase()}.png" alt="${dino.species}" />
+              <p>${dino.fact}</p>
             </div>
           `;
         });
