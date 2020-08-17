@@ -1,3 +1,5 @@
+
+      // Load Dinosaurs
       document.body.onload = generateDinos;
 
       // Create Dino Constructor
@@ -12,7 +14,6 @@
       }
 
       // Create Dino Objects
-
       // Fetch Dino from dino.json file
       let dinos = [];
 
@@ -38,7 +39,6 @@
                 diet: document.getElementById('diet').value
             }
         })();
-        //console.log(human);
 
         // On click remove form from screen
         removeForm();
@@ -84,7 +84,7 @@
         const grid = document.querySelector("#grid");
         // Add tiles to DOM
         dinos.map(dino => {
-          grid.innerHTML += `
+          grid.innerHTML = `
             <div class="grid-item">
               <h3>${dino.species}</h3>
               <img src="./images/${dino.species.toLowerCase()}.png" alt="${dino.species}" />
@@ -92,6 +92,16 @@
             </div>
           `;
         });
+
+        // Add human tile to the middle
+        const dinoFourth = document.getElementsByClassName("grid-item")[4];
+        const humanTile = `
+          <div class="grid-item">
+            <h3>${human.name}</h3>
+            <img src="./images/human.png">
+          </div>
+        `;
+        dinoFourth.before(humanTile);
       };
 
 
@@ -101,4 +111,3 @@
         const form = document.getElementById('dino-compare');
         form.innerHTML = '';
       }
-      
