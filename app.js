@@ -101,3 +101,4 @@
         const form = document.getElementById('dino-compare');
         form.innerHTML = '';
       }
+      
