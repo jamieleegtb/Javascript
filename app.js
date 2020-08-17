@@ -9,7 +9,6 @@
         this.where = where;
         this.when = when;
         this.fact = fact;
-        this.image = image;
       }
 
       // Create Dino Objects
@@ -84,15 +83,16 @@
       function generateTiles (){
         const grid = document.querySelector("#grid");
         // Add tiles to DOM
-        grid.innerHTML += `
-              <div class="grid-item">
-                  <h3>${dinos.species}</h3>
-                  <img src="${dinos.image}" alt="${dinos.species}" />
-                  <p>${dinos.facts}</p>
-
-                </div>
-            `;
-        };
+        dinos.map(dino => {
+          grid.innerHTML += `
+            <div class="grid-item">
+              <h3>${dino.species}</h3>
+              <img src="${dino.species}.png" alt="${dino.species}" />
+              <p>${dino.facts}</p>
+            </div>
+          `;
+        }
+      };
 
 
 
