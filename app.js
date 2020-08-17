@@ -117,6 +117,9 @@
             }
         })();
         //console.log(human);
+
+        // On click remove form from screen
+        removeForm();
       });
 
       // Create Dino Compare Method 1 - Weight
@@ -151,14 +154,15 @@
         }
       }
 
-
-
-
       // Generate Tiles for each Dino in Array
 
         // Add tiles to DOM
 
       // Remove form from screen
+      function removeForm() {
+        const form = document.getElementById('dino-compare');
+        form.innerHTML = '';
+      }
 
 
 // On button click, prepare and display infographic
