@@ -84,7 +84,7 @@
         const grid = document.querySelector("#grid");
         // Add tiles to DOM
         dinos.map(dino => {
-          grid.innerHTML = `
+          grid.innerHTML += `
             <div class="grid-item">
               <h3>${dino.species}</h3>
               <img src="./images/${dino.species.toLowerCase()}.png" alt="${dino.species}" />
@@ -93,15 +93,18 @@
           `;
         });
 
-        // Add human tile to the middle
-        const dinoFourth = document.getElementsByClassName("grid-item")[4];
-        const humanTile = `
+        // Get 4th dino
+        const dinoFourth = document.getElementsByClassName("grid-item")[3];
+
+        // Add Human Tile after the 4th dino
+        dinoFourth.insertAdjacentHTML("afterend", `
           <div class="grid-item">
             <h3>${human.name}</h3>
             <img src="./images/human.png">
           </div>
-        `;
-        dinoFourth.insertBefore(dinoFourt, humanTile);
+        `);
+
+
       };
 
 
