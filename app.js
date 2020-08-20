@@ -165,11 +165,17 @@
         const grid = document.querySelector("#grid");
         // Add tiles to DOM
         dinos.map(dino => {
+
+          // shuffling facts
+          const dinoFactsArray = dinos.map(dino => dino.fact);
+
+          randomFact = dinoFactsArray[Math.floor(Math.random() * dinoFactsArray.length)];
+
           grid.innerHTML += `
             <div class="grid-item">
               <h3>${dino.species}</h3>
               <img src="./images/${dino.species.toLowerCase()}.png" alt="${dino.species}" />
-              <p>${dino.fact}</p>
+              <p>${randomFact}</p>
             </div>
           `;
         });
